@@ -6,9 +6,13 @@ sample_users_json = 'sample_users.json'
 
 
 def load_json_file(file):
-    # JSONデータの読み込み
-    with open(file) as json_file:
-        data = json.load(json_file)
+    try:
+        # JSONデータの読み込み
+        with open(file) as json_file:
+            data = json.load(json_file)
+    except FileNotFoundError:
+        print(f'Error: {file} not found')
+        return None
 
     return data
 
