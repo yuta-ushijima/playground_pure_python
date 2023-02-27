@@ -1,5 +1,7 @@
 import csv
+import datetime
 import json
+import os
 
 sample_user_json = 'sample_user.json'
 sample_users_json = 'sample_users.json'
@@ -44,9 +46,21 @@ def generate_csv_writer_object(json_data, file_name):
             print("JSONデータではありません")
 
 
-if __name__ == '__main__':
-    json1 = load_json_file(sample_user_json)
-    generate_csv_writer_object(json1, 'sample_user.csv')
+def generate_current_date_directory():
+    dt_now = datetime.datetime.now()
+    year = dt_now.year
+    month = '{:02d}'.format(dt_now.month)
+    day = dt_now.day
+    return f'./{year}/{month}/{day}/'
 
-    json2 = load_json_file(sample_users_json)
-    generate_csv_writer_object(json2, 'sample_users.csv')
+
+if __name__ == '__main__':
+    dir_path = generate_current_date_directory()
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
+
+        json1 = load_json_file(sample_user_json)
+        generate_csv_writer_object(json1, f'{dir_path}sample_user.csv')
+
+        json2 = load_json_file(sample_users_json)
+        generate_csv_writer_object(json2, f'{dir_path}sample_users.csv')
