@@ -10,11 +10,13 @@ def load_json_file(file):
         # JSONデータの読み込み
         with open(file) as json_file:
             data = json.load(json_file)
+            if not data:
+                print(f'Error: {file} is empty')
+                return None
+            return data
     except FileNotFoundError:
         print(f'Error: {file} not found')
         return None
-
-    return data
 
 
 def generate_csv_writer_object(json_data, file_name):
