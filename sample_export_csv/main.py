@@ -46,7 +46,7 @@ def generate_csv_writer_object(json_data, file_name):
             print("JSONデータではありません")
 
 
-def generate_current_date_directory():
+def get_current_date_directory_path():
     dt_now = datetime.datetime.now()
     year = dt_now.year
     month = '{:02d}'.format(dt_now.month)
@@ -55,7 +55,7 @@ def generate_current_date_directory():
 
 
 if __name__ == '__main__':
-    dir_path = generate_current_date_directory()
+    dir_path = get_current_date_directory_path()
     if not os.path.exists(dir_path):
         os.makedirs(dir_path)
 
