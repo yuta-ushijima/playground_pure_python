@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "last_name": "yuta",
+    "first_name": "ushijima",
+    "age": 33,
+    "gender": "man",
+    "hobby": "video_game"
+  },
+  {
+    "id": 2,
+    "last_name": "steve",
+    "first_name": "jobs",
+    "age": 32,
+    "gender": "man",
+    "hobby": "development"
+  }
+]
