@@ -50,7 +50,7 @@ def get_current_date_directory_path():
     dt_now = datetime.now()
     year = dt_now.year
     month = '{:02d}'.format(dt_now.month)
-    day = dt_now.day
+    day = '{:02d}'.format(dt_now.day)
     return f'./{year}/{month}/{day}/'
 
 
