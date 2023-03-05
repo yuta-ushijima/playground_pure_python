@@ -1,5 +1,5 @@
 import csv
-import datetime
+from datetime import datetime
 import json
 import os
 
@@ -47,7 +47,7 @@ def generate_csv_writer_object(json_data, file_name):
 
 
 def get_current_date_directory_path():
-    dt_now = datetime.datetime.now()
+    dt_now = datetime.now()
     year = dt_now.year
     month = '{:02d}'.format(dt_now.month)
     day = dt_now.day
