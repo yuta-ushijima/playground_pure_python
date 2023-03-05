@@ -130,3 +130,5 @@ dmypy.json
 
 # Pycharm
 .idea/
+
+sample_export_csv/2023/
